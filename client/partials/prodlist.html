@@ -1,0 +1,64 @@
+<div ng-init="refresh()" ng-controller="productListCtrl">
+    <div class="nav">
+        <p>
+            <a ng-click="deleteSelected()">Delete selected</a>
+        </p>
+        <p>
+            <a ng-click="addShow = !addShow">Add product</a>
+        </p>
+        <p>
+            Show:
+            <select ng-model="limit" ng-change="paginate(0)">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </p>
+    </div>
+    <p>{{add_prod.resp}}</p>
+    <div ng-show="addShow">
+        <a ng-click="addShow = false">Close</a>
+        <form name="add_prod">
+            <p class="field-container"><input type="text" placeholder="Product Name" ng-model="add_prod.values.name" required /></p>
+            <p class="field-container"><input type="number" placeholder="Price $" ng-model="add_prod.values.price" required /></p>
+            <p class="field-container"><textarea ng-model="add_prod.values.descr" placeholder="Description(maximum 1000 chars)" ng-maxlength="1000" required></textarea></p>
+           <span class="error">{{add_prod.errorText}}</span>
+            <p class="field-container"><button type="button" ng-click="addProduct()">Add Prod</button></p>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td><input type="checkbox" ng-click="toggleCheck()" ng-model="check_all"></td>
+                <td>#</td>
+                <td>Product Name</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-if="products.length < 1"><td colspan="5">There is no products</td></tr>
+        <tr ng-repeat-start="p in products">
+            <td><input type="checkbox" ng-model="check[p.id]"></td>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price | currency:"$"}}</td>
+            <td>
+                <a ng-click="edit(p)">Edit</a>
+                <a ng-click="delete(p.id)">Delete</a>
+                <a ng-click="toggleDescr($index)"><span ng-show="$index !=descrShow">Show</span><span ng-show="$index == descrShow">Hide</span> Description</a>
+            </td>
+        </tr>
+        <tr ng-repeat-end ng-show="$index == descrShow">
+            <td></td>
+            <td colspan="4">{{p.descr}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <ul class="pagination"ng-show="limit < total">
+            <li ng-repeat="p in pages"><a ng-click="paginate($index)">{{p}}</a></li>
+        </ul>
+        <p>Showing: {{limit}} of {{total}} products </p>
+    </div>
+</div>

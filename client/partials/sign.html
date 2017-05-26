@@ -1,0 +1,12 @@
+<main class="center-container container">
+    <h3 class="page-title">Sign up</h3>
+    <form name="sign">
+         <p class="field-container"><input type="email" placeholder="Enter email" ng-model="sign.email" required /></p>
+         <p class="field-container"><input type="password" placeholder="Enter password" ng-model="sign.pass0" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required /></p>
+         <p class="field-container"><input type="password" placeholder="Confirm password" ng-model="sign.pass1" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required /></p>
+         <span>{{sign.errorText}}</span>
+         <p class="field-container"><input type="checkbox" ng-model="sign.remember" id="rememb" /><label for="rememb">Remember me</label></p>
+         <p class="field-container"><button type="button" ng-click="doSign()">Sign Up</button></p>
+        <a href="/login">Login</a>
+    </form>
+</main>

@@ -1,0 +1,32 @@
+<main ng-init="init()" class="container container-page">
+    <h2 class="page-title">Dashboard</h2>
+    <section>
+        <h3>Welcome {{user.firstname}} {{user.lastname}}</h3>
+        <p class="error" ng-if="!user.firstname && !user.lastname">Sorry i don't know your name. Can u please update your profile</p>
+        <p><strong>E-mail:</strong>{{user.email}}</p>
+        <div class="nav">
+            <p><a ng-click="updateForm = !updateForm">Edit profile</a></p>
+            <p><a ng-click="logout()">Logout</a></p>
+        </div>
+        <p>{{updateResponse}}</p>
+        <div ng-show="updateForm">
+            <a ng-click="updateForm">Close</a>
+            <form name="update">
+                <p class="field-container"><input type="email" placeholder="Email" ng-model="update.values.email" required /></p>
+                <p class="field-container"><input type="text" placeholder="First Name" ng-model="update.values.firstname" /></p>
+                <p class="field-container"><input type="text" placeholder="Last Name" ng-model="update.values.lastname" /></p>
+                <p class="field-container"><input type="password" placeholder="New Password" ng-model="update.values.pass0" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" /></p>
+                <p class="field-container"><input type="password" placeholder="Confirm New Password" ng-model="update.values.pass1" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" /></p>
+
+                <p class="field-container"><input type="password" placeholder="Current Password" ng-model="update.values.passOld" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required /></p>
+                <span class="error">{{update.errorText}}</span>
+                <p class="field-container"><button type="button" ng-click="doUpdate()">Save Changes</button></p>
+            </form>
+        </div>
+    </section>
+     <section>
+         <h3>Products</h3>
+        <product-list products="products">
+        </product-list>
+     </section>
+</main>

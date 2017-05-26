@@ -1,0 +1,165 @@
+body {
+    background: rgb(213, 226, 230);
+    margin: 0;
+    font-family: sans-serif;
+}
+a {
+    cursor: pointer;
+    color: #003d55;
+    transition: color 0.5s;
+}
+a:hover {
+    text-decoration: underline;
+    color: #1898ce;;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 0.5em;
+}
+h1 {font-size: 2.5em}
+h2 {font-size: 2em}
+h3 {font-size: 1.5em}
+h4 {font-size: 1.3em}
+h5 {font-size: 1.2em}
+h6 {font-size: 1em}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea{
+    width: 100%;
+    background: #fff;
+    border: 0;
+    box-shadow: inset 0px -2px 0 0 #ccc;
+    outline: none;
+    padding: 8px 5px;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea{
+    box-shadow: inset 0px -2px 0 0 #003d55;
+}
+input[type="text"].ng-invalid.ng-touched,
+input[type="number"].ng-invalid.ng-touched,
+input[type="email"].ng-invalid.ng-touched,
+input[type="password"].ng-invalid.ng-touched,
+textarea{
+    box-shadow: inset 0px -2px 0 0 #dd1010;
+}
+input[type="text"].ng-valid.ng-touched,
+input[type="number"].ng-valid.ng-touched,
+input[type="email"].ng-valid.ng-touched,
+input[type="password"].ng-valid.ng-touched,
+textarea{
+    box-shadow: inset 0px -2px 0 0 #10cc10;
+}
+.error {
+    color: #dd1010;
+    font-weight: 500;
+}
+button {
+    background: #d5e2e6;
+    color: #333;
+    transition: all 0.5s;
+    border: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+button:hover {
+    background: #003d55;
+    color: #fff;
+}
+table {
+    width: 100%;
+}
+table td {
+    padding: 5px 10px;
+}
+table thead td{
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    font-weight: bold;
+}
+tr:nth-of-type(2n + 1) td{
+    background: rgba(0,0,0,0.05);
+}
+tr:nth-of-type(2n) td{
+    background: rgba(255,255,255,0.05);
+}
+section {
+    margin-bottom: 50px;
+}
+.field-container {
+    margin-bottom: 10px;
+}
+.field-container button {
+    width: 100%;
+}
+#main > ng-view{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+.pagination {
+    text-align: center;
+    font-size: 0;
+}
+.pagination li {
+    font-size: 16px;
+    padding: 5px;
+    display: inline-block;
+}
+.nav {
+   font-size: 0;
+    background: #f9f9f9;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+}
+.nav p {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 16px;
+    display: inline-block;
+}
+.nav p + p {
+    border-left: 1px solid #ccc;
+}
+.container {
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 4px 2px -2px rgba(128, 128, 128, 0.5);
+    max-width: 1200px;
+}
+.container-page {
+    width: 100%;
+    align-self: stretch;
+    margin: 50px auto;
+    padding: 50px 40px;
+}
+.page-title {
+    box-shadow: inset 0 -0.05em 0 0 #ccc;
+    margin-bottom: 0.5em;
+    display: block;
+    line-height: 1;
+}
+#p404 {
+    font-size: 48px;
+}
+#p404 span {
+    font-size: 5em;
+    vertical-align: bottom;
+}

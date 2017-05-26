@@ -1,0 +1,11 @@
+<main class="center-container container">
+    <h3 class="page-title">Login</h3>
+    <form name="login">
+        <p class="field-container"><input type="email" ng-model="login.email" placeholder="Email" required /></p>
+        <p class="field-container"><input type="password" ng-model="login.pass" placeholder="Password" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]*$/" required /></p>
+        <span class="error">{{login.errorText}}</span>
+        <p class="field-container"><input type="checkbox" ng-model="login.remember" id="rememb" /><label for="rememb">Remember me</label></p>
+        <p class="field-container"><button type="button" ng-click="doLogin()">Login</button></p>
+        <a href="/sign">Sign Up</a>
+    </form>
+</main>

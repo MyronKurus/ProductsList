@@ -1,0 +1,27 @@
+{
+  "name": "cr_test",
+  "version": "1.0.0",
+  "description": "Yastrebov Innokentii Test Task for CleverRoad",
+  "main": "server/npm instaserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "author": "Kesha_kh",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "md5": "^2.2.1",
+    "multer": "^1.2.0",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
